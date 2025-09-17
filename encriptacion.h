@@ -1,0 +1,4 @@
+#ifndef ENCRIPTACION_H
+#define ENCRIPTACION_H
+
+#endif // ENCRIPTACION_H
