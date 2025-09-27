@@ -1,5 +1,5 @@
-#include "encryption.h"
-#include "utils.h"   // contiene rotRight()
+#include "encriptacion.h"
+#include "utilidades.h"   // contiene rotRight()
 
 // Se asume que la encriptación original fue:
 //   rotLeft(n) -> XOR(key)
@@ -7,13 +7,12 @@
 //   XOR(key) -> rotRight(n)
 
 unsigned char* tryDecrypt(const unsigned char* data, int len, int n_rotate, unsigned char key) {
+    if (len <= 0) return 0;
     unsigned char* out = new unsigned char[len];
     for (int i = 0; i < len; ++i) {
         unsigned char b = data[i];
-        // Paso 1: revertir XOR
-        b = (unsigned char)(b ^ key);
-        // Paso 2: revertir rotación (hacia la derecha)
-        b = rotRight(b, n_rotate);
+        b = (unsigned char)(b ^ key); // revertir XOR
+        b = rotRight(b, n_rotate); // revertir rotación
         out[i] = b;
     }
     return out;

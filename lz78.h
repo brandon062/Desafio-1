@@ -1,25 +1,17 @@
 #ifndef LZ78_H
 #define LZ78_H
 
-// Estructura para representar un par (índice, carácter)
+
+// Par (indice, caracter)
 struct EntradaLZ78 {
     int indice;
     char caracter;
 };
 
-// Nodo del diccionario dinámico
-struct Nodo {
-    char* cadena;
-};
 
-// Función para descomprimir texto con LZ78
-// Entrada: arreglo de pares (índice, caracter) y número de pares
-// Salida: cadena descomprimida
-// IMPORTANTE: la memoria devuelta debe liberarse con free() después de usarla.
-char* descomprimirLZ78(EntradaLZ78* entradas, int numEntradas);
-
-// Liberar memoria usada por el diccionario
-void liberarDiccionario(Nodo* diccionario, int numEntradas);
+// Descomprime LZ78. 'entradas' tiene numEntradas elementos.
+// Retorna cadena nueva terminada en '\0' (delete[] por el llamador).
+char* descomprimirLZ78(const EntradaLZ78* entradas, int numEntradas);
 
 
 #endif // LZ78_H

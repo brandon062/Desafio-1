@@ -1,6 +1,7 @@
 #ifndef ENCRIPTACION_H
 #define ENCRIPTACION_H
 
+
 // Función para desencriptar un buffer aplicando
 // primero XOR con la clave y luego rotación a la derecha.
 // Parámetros:
@@ -13,4 +14,5 @@
 // (el llamador debe liberar con delete[]).
 unsigned char* tryDecrypt(const unsigned char* data, int len, int n_rotate, unsigned char key);
 
-#endif // ENCRYPTION_H
+
+#endif // ENCRIPTACION_H
